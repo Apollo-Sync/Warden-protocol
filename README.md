@@ -187,8 +187,10 @@ Remove node
         rm -rf $HOME/warden
 
 Genesis & Addrbook
-https://raw.githubusercontent.com/Apollo-Sync/Warden-protocol/main/genesis.json
-https://raw.githubusercontent.com/Apollo-Sync/Warden-protocol/main/addrbook.json
+```
+curl -Ls https://raw.githubusercontent.com/Apollo-Sync/Warden-protocol/main/genesis.json
+curl -Ls https://raw.githubusercontent.com/Apollo-Sync/Warden-protocol/main/addrbook.json
+```
   
     
 
