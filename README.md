@@ -185,7 +185,11 @@ Remove node
         rm -rf $HOME/warden_auto && \
         rm -f $(which wardend) && \
         rm -rf $HOME/warden
-  # DONE 
+
+Genesis & Addrbook
+https://raw.githubusercontent.com/Apollo-Sync/Warden-protocol/main/genesis.json
+https://raw.githubusercontent.com/Apollo-Sync/Warden-protocol/main/addrbook.json
+  
     
 
         
