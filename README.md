@@ -191,7 +191,47 @@ Genesis & Addrbook
 curl -Ls https://raw.githubusercontent.com/Apollo-Sync/Warden-protocol/main/genesis.json
 curl -Ls https://raw.githubusercontent.com/Apollo-Sync/Warden-protocol/main/addrbook.json
 ```
-  
+#Update warden new version
+
+**Stop service**
+```
+sudo systemctl stop wardend
+```
+
+**Delete the old warden folder and download the new version**
+```
+cd $HOME
+rm -rf warden
+wget https://github.com/warden-protocol/wardenprotocol/releases/download/v0.3.2/wardend_Linux_x86_64.zip
+unzip wardend_Linux_x86_64.zip && rm -rf wardend_Linux_x86_64.zip
+chmod +x wardend
+```
+
+**Move wardend to /usr/local/bin, check version**
+```
+sudo mv wardend /usr/local/bin
+wardend version
+```
+
+**Stop wardend.service**
+```
+sudo systemctl stop wardend.service
+```
+
+**Remove old genesis, download new genesis**
+```
+rm -f $HOME/.warden/config/genesis.json
+curl -L https://buenavista-genesis.s3.eu-west-1.amazonaws.com/genesis.json.tar.xz | tar xJf - mv genesis.json $HOME/.warden/config/genesis.json
+```
+
+**Fetch the new genesis and unpack it**
+```
+sudo systemctl stop wardend.service
+wardend tendermint unsafe-reset-all --home $HOME/.warden
+rm -fR $HOME/.warden/wasm
+curl -L https://buenavista-genesis.s3.eu-west-1.amazonaws.com/warden-snaphot.tar.lz4 | lz4 -dc - | tar -xf - -C "$HOME/.warden"
+sudo systemctl restart wardend.service
+```
     
 
         
