@@ -198,7 +198,7 @@ curl -Ls https://raw.githubusercontent.com/Apollo-Sync/Warden-protocol/main/addr
 sudo systemctl stop wardend
 ```
 
-**Delete the old warden folder and download the new version**
+# Delete the old warden folder and download the new version
 ```
 cd $HOME
 rm -rf warden
