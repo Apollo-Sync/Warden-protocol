@@ -1,14 +1,13 @@
-# Warden-protocol
+# MANUAL WARDEN INSTALLATION NODE
 
-Update system
-
+**Update system**
+```
     sudo apt update
     sudo apt-get install git curl build-essential make jq gcc snapd chrony lz4 tmux unzip bc -y
+```
 
-
-    
-Install Go
-
+**Install Go**
+```
     rm -rf $HOME/go
     sudo rm -rf /usr/local/go
     cd $HOME
@@ -21,8 +20,7 @@ Install Go
     EOF
     source $HOME/.profile
     go version
-
-
+```
 
 Installation & Configuration
 
